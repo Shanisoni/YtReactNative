@@ -215,14 +215,18 @@
 
 
 
-import { StyleSheet, Text, View, Image, Pressable , useColorScheme} from 'react-native'
+import { StyleSheet, ScrollView, Text, View, Image, Pressable , useColorScheme} from 'react-native'
 import React from 'react'
 
 const App = () => {
  
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} 
+     
+    contentContainerStyle={{ gap: 10}}
+    horizontal
+    >
 
        <View style={styles.container1}/>
        <View style={styles.container2}/>
@@ -247,17 +251,17 @@ const App = () => {
       <View style={styles.container2}/>
        <View style={styles.container3}/>
          <View style={styles.container1}/>
-    <View style={styles.container2}/>
+      <View style={styles.container2}/>
         <View style={styles.container3}/>
- <View style={styles.container1}/>
+      <View style={styles.container1}/>
        <View style={styles.container2}/>
          <View style={styles.container3}/>
          <View style={styles.container1}/>
        <View style={styles.container2}/>
-<View style={styles.container3}/>
+      <View style={styles.container3}/>
      
       
-    </View>
+    </ScrollView>
   )
 }
 
@@ -266,15 +270,17 @@ export default App
 const styles = StyleSheet.create({
        container: {
       flex: 1,
-    flexDirection: 'column', 
-    justifyContent: 'center',
-    alignItems: 'center',  
+      padding:100,
+    // flexDirection: 'row', 
+    // justifyContent: 'center',
+    // alignItems: 'center',  
     backgroundColor: 'black',
   },
   container1: {
     // flex: 1,
     width: 100,
     height: 100,
+    borderRadius: 50,
     backgroundColor: 'yellow',
   }
   ,
@@ -282,6 +288,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     width: 100,
     height: 100,
+     borderRadius: 50,
     backgroundColor: 'blue',
   }
   ,
@@ -289,6 +296,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     width: 100,
     height: 100,
+     borderRadius: 50,
     backgroundColor: 'grey',
   }
 
