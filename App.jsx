@@ -1,83 +1,118 @@
-import { StyleSheet, Text, View, Image, Pressable , useColorScheme} from 'react-native'
-import React from 'react'
+// import { StyleSheet, Text, ScrollView, View, Image, Pressable , useColorScheme} from 'react-native'
+// import React from 'react'
 
-const App = () => {
+// const App = () => {
  
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.container1}/>
-      <View style={styles.container2}/>
-        <View style={styles.container3}/>
+//   return (
+//     <ScrollView style={styles.container}>
+
+//       <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+//         <View style={styles.container1}/>
+//       <View style={styles.container2}/>
+//         <View style={styles.container3}/>
+
     
       
       
       
-    </View>
-  )
-}
+//     </ScrollView>
+//   )
+// }
 
-export default App
+// export default App
 
-const styles = StyleSheet.create({
-    container: {
-    flex: 1,   
-    backgroundColor: '#000000ff',
-  },
-  container1: {
-    // flex: 1,
-    width: 100,
-    height: 100,
-    backgroundColor: 'yellow',
-  }
-  ,
-  container2: {
-    // flex: 1,
-    width: 100,
-    height: 100,
-    backgroundColor: 'blue',
-  }
-  ,
-  container3: {
-    // flex: 1,
-    width: 100,
-    height: 100,
-    backgroundColor: 'grey',
-  }
-
-
-  // text: {
-  //   fontSize: 20,
-  //   color: 'black',
-  //   fontWeight: 'bold',
-  //   textAlign: 'center',
-  //   marginTop: 50,
-  //   marginHorizontal: 20,
-  // },
-  // image:{
-  //   width: 300,
-  //   height: 200,
-  //   borderRadius: 10,
-  //   marginTop: 20,
-  //   alignSelf: 'center',
-  // },
-  // button: {
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//     flexDirection: 'column', 
+//     justifyContent: 'center',
+//     alignItems: 'center',  
+//     backgroundColor: 'black',
+//   },
+//   container1: {
+//     // flex: 1,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'yellow',
+//   }
+//   ,
+//   container2: {
+//     // flex: 1,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'blue',
+//   }
+//   ,
+//   container3: {
+//     // flex: 1,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'grey',
+//   }
 
 
-  //   backgroundColor: 'blue',
-  //   padding: 1,
-  //   borderRadius: 5,
-  //   marginTop: 10,
-  //   alignSelf: 'center',
-  // },
-  // buttonText: {
-  //   color: 'white',
-  //   fontSize: 16,
-  //   textAlign: 'center',
-  //   padding: 10,
-  // },
+//   // text: {
+//   //   fontSize: 20,
+//   //   color: 'black',
+//   //   fontWeight: 'bold',
+//   //   textAlign: 'center',
+//   //   marginTop: 50,
+//   //   marginHorizontal: 20,
+//   // },
+//   // image:{
+//   //   width: 300,
+//   //   height: 200,
+//   //   borderRadius: 10,
+//   //   marginTop: 20,
+//   //   alignSelf: 'center',
+//   // },
+//   // button: {
 
-})
+
+//   //   backgroundColor: 'blue',
+//   //   padding: 1,
+//   //   borderRadius: 5,
+//   //   marginTop: 10,
+//   //   alignSelf: 'center',
+//   // },
+//   // buttonText: {
+//   //   color: 'white',
+//   //   fontSize: 16,
+//   //   textAlign: 'center',
+//   //   padding: 10,
+//   // },
+
+// })
 
 
 
@@ -168,3 +203,132 @@ const styles = StyleSheet.create({
 //     // backgroundColor: '#000000ff',
 //   },
 // })
+
+
+
+
+
+
+
+
+
+
+
+
+import { StyleSheet, Text, View, Image, Pressable , useColorScheme} from 'react-native'
+import React from 'react'
+
+const App = () => {
+ 
+
+  return (
+    <View style={styles.container}>
+
+       <View style={styles.container1}/>
+       <View style={styles.container2}/>
+        <View style={styles.container3}/>
+        <View style={styles.container1}/>
+       <View style={styles.container2}/>
+         <View style={styles.container3}/>
+         <View style={styles.container1}/>
+       <View style={styles.container2}/>
+        <View style={styles.container3}/>
+        <View style={styles.container1}/>
+      <View style={styles.container2}/>
+        <View style={styles.container3}/>
+        <View style={styles.container1}/>
+     <View style={styles.container2}/>
+        <View style={styles.container3}/>
+         <View style={styles.container1}/>
+       <View style={styles.container2}/>
+       <View style={styles.container3}/>
+        <View style={styles.container1}/>
+         <View style={styles.container1}/>
+      <View style={styles.container2}/>
+       <View style={styles.container3}/>
+         <View style={styles.container1}/>
+    <View style={styles.container2}/>
+        <View style={styles.container3}/>
+ <View style={styles.container1}/>
+       <View style={styles.container2}/>
+         <View style={styles.container3}/>
+         <View style={styles.container1}/>
+       <View style={styles.container2}/>
+<View style={styles.container3}/>
+     
+      
+    </View>
+  )
+}
+
+export default App
+
+const styles = StyleSheet.create({
+       container: {
+      flex: 1,
+    flexDirection: 'column', 
+    justifyContent: 'center',
+    alignItems: 'center',  
+    backgroundColor: 'black',
+  },
+  container1: {
+    // flex: 1,
+    width: 100,
+    height: 100,
+    backgroundColor: 'yellow',
+  }
+  ,
+  container2: {
+    // flex: 1,
+    width: 100,
+    height: 100,
+    backgroundColor: 'blue',
+  }
+  ,
+  container3: {
+    // flex: 1,
+    width: 100,
+    height: 100,
+    backgroundColor: 'grey',
+  }
+
+
+
+  // text: {
+  //   fontSize: 20,
+  //   color: 'black',
+  //   fontWeight: 'bold',
+  //   textAlign: 'center',
+  //   marginTop: 50,
+  //   marginHorizontal: 20,
+  // },
+  // image:{
+  //   width: 300,
+  //   height: 200,
+  //   borderRadius: 10,
+  //   marginTop: 20,
+  //   alignSelf: 'center',
+  // },
+  // button: {
+
+
+  //   backgroundColor: 'blue',
+  //   padding: 1,
+  //   borderRadius: 5,
+  //   marginTop: 10,
+  //   alignSelf: 'center',
+  // },
+  // buttonText: {
+  //   color: 'white',
+  //   fontSize: 16,
+  //   textAlign: 'center',
+  //   padding: 10,
+  // },
+  // container: {
+  //   // gap:10,
+  //   flex: 1,
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   backgroundColor: '#000000ff',
+  // },
+})
