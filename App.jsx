@@ -401,7 +401,9 @@ const App = () => {
       </View>
 
       )}
-
+      keyExtractor={(item) => item.id}
+      numColumns={2}
+      columnWrapperStyle={{gap: 40}}
       ItemSeparatorComponent={<View style={{height:50}} />}
       />
      
