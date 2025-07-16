@@ -317,129 +317,173 @@
 
 
 
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  FlatList
-} from 'react-native';
-import React from 'react';
-// import { FlatList } from 'react-native/types_generated/index';
+// import {
+//   StyleSheet,
+//   View,
+//   Text,
+//   Image,
+//   FlatList
+// } from 'react-native';
+// import React from 'react';
+// // import { FlatList } from 'react-native/types_generated/index';
 
 
-const dummy = [
-  { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
-  // ... add more as needed, just copy-paste and increment the id/name/email
-];
+// const dummy = [
+//   { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 1, name: "Muskan", email: "muskan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 2, name: "Anny", email: "anny123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 3, name: "John", email: "john123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 4, name: "Harsh", email: "harsh123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 5, name: "Somu", email: "somu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 6, name: "Sarthak", email: "sarthak123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 7, name: "Rishu", email: "rishu123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 8, name: "Arni", email: "arni123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 9, name: "Aryan", email: "aryan123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   { id: 10, name: "Anil", email: "anil123@gmail.com", image: "https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" },
+//   // ... add more as needed, just copy-paste and increment the id/name/email
+// ];
 
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <FlatList
-      data ={dummy}
-      renderItem = {({item}) =>(
-         <View style={styles.card}>
-        <Image
-          style={styles.profileImage}
-          source={{
-            uri: 'https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg',
-          }}
-        />
-        <Text>Name</Text>
-        <Text>Email</Text>
-      </View>
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <FlatList
+//       data ={dummy}
+//       renderItem = {({item}) =>(
+//          <View style={styles.card}>
+//         <Image
+//           style={styles.profileImage}
+//           source={{
+//             uri: 'https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg',
+//           }}
+//         />
+//         <Text>Name</Text>
+//         <Text>Email</Text>
+//       </View>
 
-      )}
-      keyExtractor={(item) => item.id}
-      numColumns={2}
-      columnWrapperStyle={{gap: 40}}
-      ItemSeparatorComponent={<View style={{height:50}} />}
-      />
+//       )}
+//       keyExtractor={(item) => item.id}
+//       numColumns={2}
+//       columnWrapperStyle={{gap: 40}}
+//       ItemSeparatorComponent={<View style={{height:50}} />}
+//       />
      
-    </View>
-  );
-};
+//     </View>
+//   );
+// };
 
-export default App;
+// export default App;
 
+// // const styles = StyleSheet.create({
+// //   container: {
+// //     paddingVertical: 10,
+// //     paddingHorizontal: 10,
+// //     backgroundColor: '#000000ff',
 // const styles = StyleSheet.create({
 //   container: {
 //     paddingVertical: 10,
 //     paddingHorizontal: 10,
 //     backgroundColor: '#000000ff',
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   card: {
+//     width: 150,
+//     height: 180,
+//     backgroundColor: 'yellow',
+//     borderRadius: 10,
+//     padding: 20,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   profileImage: {
+//     width: 80,
+//     height: 80,
+//     borderRadius: 40,
+//     marginBottom: 10,
+//   },
+// });
+
+
+
+
+
+
+
+import { StyleSheet, Text, View, TextInput } from 'react-native'
+import React from 'react'
+// import { TextInput } from 'react-native/types_generated/index'
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Hello bhaiya Choose lo</Text>
+      <TextInput placeholder='Type here...' 
+      style={styles.textinpt}
+      />
+    </View>
+  )
+}
+
+export default App
+
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    backgroundColor: '#000000ff',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f0f0f0',
   },
-  card: {
-    width: 150,
-    height: 180,
-    backgroundColor: 'yellow',
-    borderRadius: 10,
-    padding: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
-  profileImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    marginBottom: 10,
+  textinpt: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
+    width: '80%',
   },
-});
+})
