@@ -450,17 +450,26 @@
 
 
 
-import { StyleSheet, Text, View, TextInput } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TextInput,Button } from 'react-native'
+import React, { useState } from 'react'
+// import { Button } from 'react-native/types_generated/index'
 // import { TextInput } from 'react-native/types_generated/index'
 
 const App = () => {
+   const [text, setText] = useState('Shani Don')
+
+
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Hello bhaiya Choose lo</Text>
       <TextInput placeholder='Type here...' 
       style={styles.textinpt}
+      value={text}
+      onChangeText={(text) => setText(text)}
       />
+      <Button title='Submit' ></Button>
+      <Text> Result </Text>
     </View>
   )
 }
@@ -469,10 +478,11 @@ export default App
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f0f0f0',
+    gap: 20,
   },
   title: {
     fontSize: 24,
