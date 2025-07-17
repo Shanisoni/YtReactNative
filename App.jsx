@@ -456,8 +456,12 @@ import React, { useState } from 'react'
 // import { TextInput } from 'react-native/types_generated/index'
 
 const App = () => {
-   const [text, setText] = useState('Shani Don')
+   const [text, setText] = useState('')
+   const [submittedText, setsubmittedText] = useState('');
 
+   const handleSubmit = () => {
+    setsubmittedText(text);
+   }
 
 
   return (
@@ -466,10 +470,10 @@ const App = () => {
       <TextInput placeholder='Type here...' 
       style={styles.textinpt}
       value={text}
-      onChangeText={(text) => setText(text)}
+      onChangeText={(e) => setText(e)}
       />
-      <Button title='Submit' ></Button>
-      <Text> Result </Text>
+      <Button title='Submit' onPress={handleSubmit}></Button>
+      {submittedText ? (<Text> Result  : {text} </Text>) : null}
     </View>
   )
 }
