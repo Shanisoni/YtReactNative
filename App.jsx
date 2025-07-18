@@ -450,58 +450,110 @@
 
 
 
-import { StyleSheet, Text, View, TextInput,Button } from 'react-native'
-import React, { useState } from 'react'
-// import { Button } from 'react-native/types_generated/index'
-// import { TextInput } from 'react-native/types_generated/index'
+// import { StyleSheet, Text, View, TextInput,Button } from 'react-native'
+// import React, { useState } from 'react'
+// // import { Button } from 'react-native/types_generated/index'
+// // import { TextInput } from 'react-native/types_generated/index'
+
+// const App = () => {
+//    const [text, setText] = useState('')
+//    const [submittedText, setsubmittedText] = useState('');
+
+//    const handleSubmit = () => {
+//     setsubmittedText(text);
+//     setText(''); // Clear the input field after submission
+//    }
+
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Hi there , Shani this side</Text>
+//       <TextInput placeholder='Type here...' 
+//       style={styles.textinpt}
+//       value={text}
+//       onChangeText={(e) => setText(e)}
+//       multiline
+//       numberOfLines={1}
+//       />
+//       <Button title='Submit' onPress={handleSubmit}></Button>
+//       {submittedText ? (<Text> Result  : {submittedText} </Text>) : null}
+
+//     </View>
+//   )
+// }
+
+// export default App
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1, 
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#f0f0f0',
+//     gap: 20,
+//   },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     marginBottom: 20,
+//   },
+//   textinpt: {
+//     borderWidth: 1,
+//     borderColor: '#ccc',
+//     borderRadius: 5,
+//     padding: 10,
+//     width: '80%',
+//   },
+// })
+
+
+
+
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+
+const Home = () => {
+  return (
+    <View>
+      <Text style={styles.home} >Home</Text>
+    </View>
+  )
+}  
+
 
 const App = () => {
-   const [text, setText] = useState('')
-   const [submittedText, setsubmittedText] = useState('');
-
-   const handleSubmit = () => {
-    setsubmittedText(text);
-    setText(''); // Clear the input field after submission
-   }
-
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hi there , Shani this side</Text>
-      <TextInput placeholder='Type here...' 
-      style={styles.textinpt}
-      value={text}
-      onChangeText={(e) => setText(e)}
-      multiline
-      numberOfLines={1}
-      />
-      <Button title='Submit' onPress={handleSubmit}></Button>
-      {submittedText ? (<Text> Result  : {submittedText} </Text>) : null}
-
-    </View>
+      <View style={{flex:1 , justifyContent:'center', alignItems:'center'}}>
+        <Text style={styles.text}> App Ios </Text>
+        <Home/>
+      </View>
+      
   )
 }
 
 export default App
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f0f0f0',
-    gap: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  textinpt: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
-    width: '80%',
-  },
+  // text:{
+  //   fontSize: 24,
+  //   fontWeight: 'bold',
+  //   color: 'black',
+  // },
+  // container:{
+  //   marginTop :190,
+  //   flex: 1,
+  //   // // flexDirection: 'row',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   backgroundColor: '#ac0f0fff',
+  // },
+  // home: {
+  //   fontSize: 24,
+  //   fontWeight: 'bold',
+  //   color: 'black',
+  //   textAlign: 'center',
+  //   marginTop: 20,
+  // },
+
 })
