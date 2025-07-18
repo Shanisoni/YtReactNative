@@ -461,19 +461,23 @@ const App = () => {
 
    const handleSubmit = () => {
     setsubmittedText(text);
+    setText(''); // Clear the input field after submission
    }
 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello bhaiya Choose lo</Text>
+      <Text style={styles.title}>Hi there , Shani this side</Text>
       <TextInput placeholder='Type here...' 
       style={styles.textinpt}
       value={text}
       onChangeText={(e) => setText(e)}
+      multiline
+      numberOfLines={1}
       />
       <Button title='Submit' onPress={handleSubmit}></Button>
-      {submittedText ? (<Text> Result  : {text} </Text>) : null}
+      {submittedText ? (<Text> Result  : {submittedText} </Text>) : null}
+
     </View>
   )
 }
