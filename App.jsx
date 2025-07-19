@@ -512,19 +512,27 @@
 
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Home from './android/app/src/Screen/Home'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Profile from './android/app/src/Screen/Profile';
+import Search from './android/app/src/Screen/Search';
 
-const Home = () => {
+
+const Stack = createNativeStackNavigator;
+const AppNavigator = () => {
   return (
-    <View>
-      <Text style={styles.home} >Home</Text>
-    </View>
-  )
-}  
-
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Search" component={Search} />
+      {/* Add more screens here as needed */}
+    </Stack.Navigator>
+  );
+};
 
 const App = () => {
   return (
-      <View style={{flex:1 , justifyContent:'center', alignItems:'center'}}>
+      <View >
         <Text style={styles.text}> App Ios </Text>
         <Home/>
       </View>
