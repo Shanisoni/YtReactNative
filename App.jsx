@@ -1,3 +1,75 @@
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import HomeScreen from './src/screens/HomeScreen'
+
+const App = () => {
+  return (
+    <View>
+      {/* <Text style={styles.text}>App</Text> */}
+      <HomeScreen/>
+    </View>
+  )
+}
+
+export default App
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 50,
+    marginHorizontal: 20,
+  },
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import { StyleSheet, Text, ScrollView, View, Image, Pressable , useColorScheme} from 'react-native'
 // import React from 'react'
 
@@ -509,54 +581,55 @@
 
 
 
-import { enableScreens } from 'react-native-screens';
-enableScreens();
+// import { enableScreens } from 'react-native-screens';
+// enableScreens();
 
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './app/src/Screen/Home';
-import Profile from './app/src/Screen/Profile';
-import Search from './app/src/Screen/Search';
+// import Home from './app/src/Screen/Home';
+// import Profile from './app/src/Screen/Profile';
+// import Search from './app/src/Screen/Search';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Search" component={Search} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen name="Home" component={Home} />
+//         <Stack.Screen name="Profile" component={Profile} />
+//         <Stack.Screen name="Search" component={Search} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
 
-export default App;
+// export default App;
 
 
-// const styles = StyleSheet.create({
-  // text:{
-  //   fontSize: 24,
-  //   fontWeight: 'bold',
-  //   color: 'black',
-  // },
-  // container:{
-  //   marginTop :190,
-  //   flex: 1,
-  //   // // flexDirection: 'row',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: '#ac0f0fff',
-  // },
-  // home: {
-  //   fontSize: 24,
-  //   fontWeight: 'bold',
-  //   color: 'black',
-  //   textAlign: 'center',
-  //   marginTop: 20,
-  // },
+// // const styles = StyleSheet.create({
+//   // text:{
+//   //   fontSize: 24,
+//   //   fontWeight: 'bold',
+//   //   color: 'black',
+//   // },
+//   // container:{
+//   //   marginTop :190,
+//   //   flex: 1,
+//   //   // // flexDirection: 'row',
+//   //   justifyContent: 'center',
+//   //   alignItems: 'center',
+//   //   backgroundColor: '#ac0f0fff',
+//   // },
+//   // home: {
+//   //   fontSize: 24,
+//   //   fontWeight: 'bold',
+//   //   color: 'black',
+//   //   textAlign: 'center',
+//   //   marginTop: 20,
+//   // },
 
-// })
+// // })
+
