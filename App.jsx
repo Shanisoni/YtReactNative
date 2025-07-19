@@ -516,26 +516,31 @@ import Home from './android/app/src/Screen/Home'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './android/app/src/Screen/Profile';
 import Search from './android/app/src/Screen/Search';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const Stack = createNativeStackNavigator;
-const AppNavigator = () => {
+const StackNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.StackNavigator>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Search" component={Search} />
       {/* Add more screens here as needed */}
-    </Stack.Navigator>
+    </Stack.StackNavigator>
   );
 };
 
 const App = () => {
   return (
-      <View >
-        <Text style={styles.text}> App Ios </Text>
-        <Home/>
-      </View>
+
+    <NavigationContainer>
+      <StackNavigator/>
+    </NavigationContainer>
+      // <View >
+      //   <Text style={styles.text}> App Ios </Text>
+      //   <Home/>
+      // </View>
       
   )
 }
