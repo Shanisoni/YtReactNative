@@ -12,6 +12,8 @@ import React, { useState } from 'react';
 const CreateScreen = ({ data, setdata }) => {
   const [itemName, setitemName] = useState('');
   const [stockAmnt, setstockAmnt] = useState('');
+  const [isEdit, setisEdit] = useState('False')
+  const [editItemID, seteditItemID] = useState(null)
 
   const handlerAddItem = () => {
     const newItem = {
@@ -22,10 +24,34 @@ const CreateScreen = ({ data, setdata }) => {
     setdata([...data, newItem]);
     setitemName('');
     setstockAmnt('');
+    setisEdit(false);
   };
 
   const deletehandler = (id) => {
      setdata(data.filter((item) => item.id !== id));
+  }
+
+  const editItemHandler = (item) => {
+   setisEdit(true) 
+  setitemName(item.name)
+  setstockAmnt(item.stock.toString());
+  seteditItemID(item.id)
+
+  }
+
+
+  const updateItem = () => {
+    setdata(data.map((item) => {
+      if (item.id === editItemID) {
+        return { ...item, name: itemName, stock: parseInt(stockAmnt) };
+      }
+      return item;
+    }));
+    
+    setitemName('');
+    setstockAmnt('');
+    setisEdit(false);
+    seteditItemID(null);
   }
 
   return (
@@ -46,12 +72,12 @@ const CreateScreen = ({ data, setdata }) => {
         style={styles.input}
       />
 
-      <Pressable style={styles.Addbutton} onPress={() => handlerAddItem()}>
-        <Text style={styles.textColor}>Add Item</Text>
+      <Pressable style={styles.Addbutton} onPress={() => isEdit ? updateItem() : handlerAddItem()}>
+        <Text style={styles.textColor}>{isEdit ? 'Editing Item in the Stock' : 'Add Item to the Stock'}</Text>
       </Pressable>
 
       <View style={{ marginTop: 20, marginBottom: 20 }}>
-        <Text style={styles.headingText}>All Items in the Stock</Text>
+        <Text style={styles.headingText}> All Items in the Stock</Text>
 
         <FlatList
           data={data}
@@ -67,16 +93,17 @@ const CreateScreen = ({ data, setdata }) => {
               <Text style={styles.ItemText}>{item.stock}</Text>
               <View style={{ flexDirection: 'row', gap: 20 }}>
                 <Pressable
-                  style={{
-                    backgroundColor: '#993099ff',
-                    paddingHorizontal: 10,
-                    paddingVertical: 5,
-                    borderRadius: 5,
-                  }}
+                  style={{backgroundColor: '#993099ff',  paddingHorizontal: 10, borderRadius: 5,paddingVertical: 5,}}
                   onPress={() => deletehandler(item.id)}>
-                                    <Text style={styles.ItemText} >Delete</Text>
-                  </Pressable>
-                <Text style={styles.ItemText}>Edit</Text>
+                  <Text style={styles.ItemText} >Delete</Text>
+                </Pressable >
+                
+                <Pressable onPress={() => editItemHandler(item)}>
+
+                    <Text style={styles.ItemText}>Edit</Text>
+
+                </Pressable>
+                
               </View>
             </View>
           )}
