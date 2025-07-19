@@ -509,45 +509,35 @@
 
 
 
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import Home from './android/app/src/Screen/Home'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Profile from './android/app/src/Screen/Profile';
-import Search from './android/app/src/Screen/Search';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Home from './app/src/Screen/Home';
+import Profile from './app/src/Screen/Profile';
+import Search from './app/src/Screen/Search';
 
-const Stack = createNativeStackNavigator;
-const StackNavigator = () => {
-  return (
-    <Stack.StackNavigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Search" component={Search} />
-      {/* Add more screens here as needed */}
-    </Stack.StackNavigator>
-  );
-};
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-
     <NavigationContainer>
-      <StackNavigator/>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Search" component={Search} />
+      </Stack.Navigator>
     </NavigationContainer>
-      // <View >
-      //   <Text style={styles.text}> App Ios </Text>
-      //   <Home/>
-      // </View>
-      
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({
+
+// const styles = StyleSheet.create({
   // text:{
   //   fontSize: 24,
   //   fontWeight: 'bold',
@@ -569,4 +559,4 @@ const styles = StyleSheet.create({
   //   marginTop: 20,
   // },
 
-})
+// })
