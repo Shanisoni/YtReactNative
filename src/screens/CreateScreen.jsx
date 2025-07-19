@@ -74,9 +74,9 @@ const CreateScreen = ({ data, setdata }) => {
                     borderRadius: 5,
                   }}
                   onPress={() => deletehandler(item.id)}>
-                                    <Text style={styles.ItemText} >Edit</Text>
+                                    <Text style={styles.ItemText} >Delete</Text>
                   </Pressable>
-                <Text style={styles.ItemText}>Delete</Text>
+                <Text style={styles.ItemText}>Edit</Text>
               </View>
             </View>
           )}
