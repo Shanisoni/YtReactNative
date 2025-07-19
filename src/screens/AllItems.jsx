@@ -14,11 +14,15 @@ const AllItems = ({data}) => {
         data = {data}
         keyExtractor={(item) =>item.id}
         renderItem={({item}) => (
-            <View>
-                <Text style={styles.headingText}>Items</Text>
-                <Text style={styles.headingText}>Quantity</Text>
+            <View style={[styles.ItemContainer , {backgroundColor: item.stock < 10 ? '#FF7F7F' : '#90EE90'}]}>
+                <Text style={styles.ItemText}>{item.name}</Text>
+                <Text style={styles.ItemText}>{item.stock}</Text>
             </View>
         )}
+
+        contentContainerStyle={{
+            gap: 10,
+        }}
         />
 
     </View>
@@ -32,10 +36,28 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal:15,
+        marginBottom: 20,
     },
     headingText:{
         fontSize: 18,
+        fontWeight: '900',
+        color: '#333',
+    },
+    ItemContainer:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+        borderRadius: 20,
+        
+    },
+    ItemText:{
+        fontSize: 18,
         fontWeight: '500',
         color: '#333',
+        borderRadius: 50,
+        
     }
 })

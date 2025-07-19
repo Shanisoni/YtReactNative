@@ -5,16 +5,16 @@ import AllItems from './AllItems'
 import CreateScreen from './CreateScreen'
 
 
-const data = [  { id: 1, name: 'Item 1', stock: 10, unit: 'kg' },
-  { id: 2, name: 'Item 2', stock: 5, unit: 'kg' },
-  { id: 3, name: 'Item 3', stock: 0, unit: 'kg' },
-  { id: 4, name: 'Item 4', stock: 2, unit: 'kg' },
-  { id: 5, name: 'Item 5', stock: 8, unit: 'kg' },
-  { id: 6, name: 'Item 6', stock: 1, unit: 'kg' },
-  { id: 7, name: 'Item 7', stock: 3, unit: 'kg' },
-  { id: 8, name: 'Item 8', stock: 6, unit: 'kg' },
-  { id: 9, name: 'Item 9', stock: 4, unit: 'kg' },
-  { id: 10, name: 'Item 10', stock: 7, unit: 'kg' },]
+const data = [  { id: 1, name: 'wheat', stock: 10, unit: 'kg' },
+  { id: 2, name: 'maize', stock: 5, unit: 'kg' },
+  { id: 3, name: 'rice', stock: 0, unit: 'kg' },
+  { id: 4, name: 'corn', stock: 2, unit: 'kg' },
+  { id: 5, name: 'barley', stock: 8, unit: 'kg' },
+  { id: 6, name: 'oats', stock: 11, unit: 'kg' },
+  { id: 7, name: 'rye', stock: 3, unit: 'kg' },
+  { id: 8, name: 'sorghum', stock: 16, unit: 'kg' },
+  { id: 9, name: 'millet', stock: 4, unit: 'kg' },
+  { id: 10, name: 'quinoa', stock: 7, unit: 'kg' },]
 
 const HomeScreen = () => {
   const [view, setview] = useState(0)
@@ -24,21 +24,21 @@ const HomeScreen = () => {
       <Text style={styles.title}>Dashboard</Text>
 
       <View style={styles.buttonContainer}>
-        <Pressable style={[styles.button, view === 0 ? {backgroundColor:'grey'} : null]} onPress={() => setview(0)}>
+        <Pressable style={[styles.button, view === 0 ? {backgroundColor:'green'} : null]} onPress={() => setview(0)}>
           <Text style={[styles.buttonText, view === 0 ? {color:'white'} : null]}>All Items</Text>
         </Pressable>
-        <Pressable style={[styles.button, view === 1 ? {backgroundColor:'grey'} : null]} onPress={() => setview(1)}>
+        <Pressable style={[styles.button, view === 1 ? {backgroundColor:'blue'} : null]} onPress={() => setview(1)}>
           <Text style={[styles.buttonText, view === 1 ? {color:'white'} : null]}>Low Stock</Text>
         </Pressable>
-        <Pressable style={[styles.button, view === 2 ? {backgroundColor:'grey'} : null]} onPress={() => setview(2)}>
+        <Pressable style={[styles.button, view === 2 ? {backgroundColor:'red'} : null]} onPress={() => setview(2)}>
           <Text style={[styles.buttonText, view === 2 ? {color:'white'} : null]}>Create Item</Text>
         </Pressable>
       </View>
 
       {view === 0 && <AllItems data={data}/>}
-      {view === 1 && <AllItems/>}
+      {view === 1 && <AllItems data={data.filter(item => item.stock < 10)}/>}
       {/* {view === 1 && <LowStockView />} */}
-      {view === 2 && <CreateScreen />}
+      {view === 2 && <CreateScreen data={data} />}
     </View>
   )
 }
