@@ -5,7 +5,12 @@ import AllItems from './AllItems'
 import CreateScreen from './CreateScreen'
 
 
-const data = [  { id: 1, name: 'wheat', stock: 10, unit: 'kg' },
+
+
+const HomeScreen = () => {
+const [view, setview] = useState(0)
+const [data, setdata] = useState([ 
+    { id: 1, name: 'wheat', stock: 10, unit: 'kg' },
   { id: 2, name: 'maize', stock: 5, unit: 'kg' },
   { id: 3, name: 'rice', stock: 0, unit: 'kg' },
   { id: 4, name: 'corn', stock: 2, unit: 'kg' },
@@ -14,10 +19,7 @@ const data = [  { id: 1, name: 'wheat', stock: 10, unit: 'kg' },
   { id: 7, name: 'rye', stock: 3, unit: 'kg' },
   { id: 8, name: 'sorghum', stock: 16, unit: 'kg' },
   { id: 9, name: 'millet', stock: 4, unit: 'kg' },
-  { id: 10, name: 'quinoa', stock: 7, unit: 'kg' },]
-
-const HomeScreen = () => {
-  const [view, setview] = useState(0)
+  { id: 10, name: 'quinoa', stock: 7, unit: 'kg' }])
 
   return (
     <View style={styles.container}>
@@ -38,7 +40,7 @@ const HomeScreen = () => {
       {view === 0 && <AllItems data={data}/>}
       {view === 1 && <AllItems data={data.filter(item => item.stock < 10)}/>}
       {/* {view === 1 && <LowStockView />} */}
-      {view === 2 && <CreateScreen data={data} />}
+      {view === 2 && <CreateScreen data={data} setdata={setdata} />}
     </View>
   )
 }
