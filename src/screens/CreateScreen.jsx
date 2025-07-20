@@ -23,6 +23,14 @@ const CreateScreen = ({ data, setdata }) => {
   // editItemID: jiska item edit ho raha hai uska ID store karta hai
   const [editItemID, seteditItemID] = useState(null);
 
+  // Error message for item name input
+  const [itemNameError, setitemNameError] = useState('');
+
+  
+ // Error message for stock amount input
+ const [stockError, setstockError] = useState('')
+
+
   // Ye function ek naya item create karta hai jab Add button dabaya jata hai
   const handlerAddItem = () => {
     const newItem = {
@@ -74,18 +82,53 @@ const CreateScreen = ({ data, setdata }) => {
         placeholder="Enter Item Name..." // Placeholder text
         placeholderTextColor="#162716ff"  // Light green placeholder
         value={itemName}                 // itemName state se bind hai
-        onChangeText={e => setitemName(e)} // jab text change ho to state update karo
-        style={styles.input}               // styling apply
+        onChangeText={e =>{ 
+          const isValid = /^[A-Za-z\s]*$/.test(e);  // ✅ Regular expression for only letters/spaces
+          if(isValid){
+            setitemName(e);// Agar valid hai to stock amount ko update karo
+            setitemNameError(''); // Agar valid hai to error message clear karo
+          }
+          else{
+
+            setitemNameError('❌ Numbers are not allowed in item name')
+
+          }
+          setitemName(e) // jab text change ho to state update karo      
+        }}// styling apply
+
+        style={[styles.input, itemNameError ? {borderColor : 'red' } : null ]} 
+        
       />
+
+      {itemNameError !== '' && (
+        <Text style={{color : 'red'}}>{itemNameError}</Text>
+      )}
 
       {/* Stock amount ke liye input field */}
       <TextInput
         placeholder="Enter Stock Amount..."
         placeholderTextColor="#0b1f0bff"
         value={stockAmnt}
-        onChangeText={e => setstockAmnt(e)}
-        style={styles.input}
+        onChangeText={e => {
+          
+          const inValid = /^[0-9]*$/.test(e); // ✅ Regular expression for only numbers
+          if(inValid){
+            setstockError(''); // Agar valid hai to error message clear karo
+            setstockAmnt(e); // Agar valid hai to stock amount ko update karo
+
+          }
+          else{
+            setstockError('❌ Only numbers are allowed in stock amount') // Agar invalid hai to error message set karo
+            setstockAmnt(''); // Agar invalid hai to stock amount ko clear karo
+          }
+        }
+          
+        }
+        style={[styles.input, stockError ? {borderColor : 'red' } : null ]} // styling apply
       />
+      {stockError !== '' && ( 
+        <Text style={{color : 'red'}}>{stockError}</Text>
+      )}   
 
       {/* Add ya Edit button - conditionally label aur function change hota hai */}
       <Pressable
