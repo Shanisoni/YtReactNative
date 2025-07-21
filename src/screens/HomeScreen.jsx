@@ -118,11 +118,38 @@ const styles = StyleSheet.create({
   },
 
   // Title text ka style
-  title: {
-    fontSize: 24, // Font size thoda bada rakha hai
-    fontWeight: 'bold', // Bold font
-    color: '#333', // Dark grey color
-  },
+ title: {
+  fontSize: 34,
+  fontWeight: '700',
+  color: '#0F172A',
+  lineHeight: 40,
+  letterSpacing: 0.4,
+  fontFamily: 'Inter',
+  textAlign: 'left',
+  marginVertical: 20,
+  marginHorizontal: 118,
+  
+
+  // Border styling
+  borderWidth: 2,
+  borderColor: '#CBD5E1',
+  borderRadius: 12,
+  // paddingVertical: 10, // 🔽 Reduced padding (was 12 before )
+
+  // 🔽 Reduced padding (was 12 before)
+  // paddingVertical: 1,   // Less height inside border
+  // paddingHorizontal: -18, // Less width inside border
+
+  backgroundColor: '#F8FAFC',
+
+  // Subtle shadow
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.1,
+  shadowRadius: 4,
+  elevation: 3,
+},
+
 
   // Buttons ko row me dikhane ke liye container
   buttonContainer: {
