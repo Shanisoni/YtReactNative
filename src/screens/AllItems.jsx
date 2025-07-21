@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
   // Heading text ke liye style
   headingText: {
-    fontSize: 18, // Size bada
+    fontSize: 18, // Size bada 
     fontWeight: '900', // Bold weight
     color: '#333', // Dark grey text
   },
